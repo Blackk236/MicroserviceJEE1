@@ -1,0 +1,50 @@
+{
+  "name": "Plat",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "prixUnitaire",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "quantite",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "boisson",
+      "otherEntityRelationshipName": "plat",
+      "relationshipName": "boisson",
+      "otherEntityField": "libelle",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "plat",
+      "relationshipName": "commande",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "plat",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["jeeProjectGat", "jeeProjectAPI1"],
+  "microserviceName": "jeeProjectAPI1",
+  "clientRootFolder": "jeeProjectAPI1",
+  "databaseType": "sql",
+  "changelogDate": "20210327213946"
+}

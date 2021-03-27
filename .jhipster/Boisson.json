@@ -1,0 +1,32 @@
+{
+  "name": "Boisson",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "plat",
+      "otherEntityRelationshipName": "boisson",
+      "relationshipName": "plat",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "boisson",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["jeeProjectGat", "jeeProjectAPI1"],
+  "microserviceName": "jeeProjectAPI1",
+  "clientRootFolder": "jeeProjectAPI1",
+  "databaseType": "sql",
+  "changelogDate": "20210327213746"
+}
